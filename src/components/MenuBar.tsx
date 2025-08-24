@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const MenuBar = () => {
-  const menuItems = ["File", "Edit", "View", "Model", "Query", "Database", "Plugins", "Scripting", "Community", "Help"];
+  const menuItems = ["File","Model","Database", "Help"];
 
   return (
     <div className="bg-workbench-menu-bg border-b border-workbench-border h-6 flex items-center px-2">

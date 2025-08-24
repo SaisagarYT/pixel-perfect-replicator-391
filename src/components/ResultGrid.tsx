@@ -54,20 +54,6 @@ const ResultGrid = () => {
       case "Result (1)":
         return (
           <div className="flex-1 bg-workbench-grid-bg overflow-auto">
-            {/* Grid Toolbar */}
-            <div className="bg-workbench-grid-header border-b border-workbench-grid-border px-2 py-1 flex items-center gap-2">
-              <div className="flex gap-1">
-                {["📁", "💾", "📋", "✂️", "📄", "🔍", "↻", "⏹️"].map((icon, index) => (
-                  <button
-                    key={index}
-                    className="w-5 h-5 flex items-center justify-center text-xs hover:bg-workbench-hover rounded"
-                  >
-                    {icon}
-                  </button>
-                ))}
-              </div>
-              <span className="text-xs text-workbench-text ml-auto">Fetched 4 records</span>
-            </div>
 
             {/* Grid Table */}
             <div className="overflow-auto">

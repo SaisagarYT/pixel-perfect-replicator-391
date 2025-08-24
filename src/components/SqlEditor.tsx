@@ -43,25 +43,7 @@ SELECT * FROM movies;
           <span className="text-xs text-workbench-text">SQL Statements</span>
           <X className="w-3 h-3 text-workbench-text hover:bg-workbench-hover rounded cursor-pointer" />
         </div>
-        <div className="p-2 h-16">
-          <div className="text-xs text-workbench-blue font-mono leading-relaxed">
-            <div className="flex">
-              <span className="text-workbench-text-muted mr-2">1</span>
-              <span className="text-blue-400">USE</span>
-              <span className="text-workbench-text ml-1">dvd_collection;</span>
-            </div>
-            <div className="flex">
-              <span className="text-workbench-text-muted mr-2">2</span>
-              <span className="text-blue-400">SELECT</span>
-              <span className="text-workbench-text ml-1">* </span>
-              <span className="text-blue-400">FROM</span>
-              <span className="text-workbench-text ml-1">movies;</span>
-            </div>
-            <div className="flex">
-              <span className="text-workbench-text-muted mr-2">3</span>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       {/* Main Editor Area */}
