@@ -2,57 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* MySQL Workbench Design System - Exact color replication */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* MySQL Workbench main colors */
+    --workbench-bg: 210 15% 20%;
+    --workbench-surface: 210 15% 25%;
+    --workbench-surface-light: 210 15% 30%;
+    --workbench-border: 210 15% 35%;
+    --workbench-text: 0 0% 90%;
+    --workbench-text-muted: 0 0% 70%;
+    --workbench-blue: 210 80% 45%;
+    --workbench-blue-light: 210 80% 60%;
+    --workbench-selected: 210 80% 35%;
+    --workbench-hover: 210 15% 35%;
+    
+    /* Menu and toolbar */
+    --workbench-menu-bg: 210 15% 18%;
+    --workbench-toolbar-bg: 210 15% 22%;
+    
+    /* Editor colors */
+    --workbench-editor-bg: 0 0% 98%;
+    --workbench-editor-text: 0 0% 20%;
+    
+    /* Grid colors */
+    --workbench-grid-bg: 0 0% 100%;
+    --workbench-grid-border: 0 0% 80%;
+    --workbench-grid-header: 210 15% 90%;
+    --workbench-grid-selected: 210 80% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Legacy mappings for compatibility */
+    --background: var(--workbench-bg);
+    --foreground: var(--workbench-text);
+    --card: var(--workbench-surface);
+    --card-foreground: var(--workbench-text);
+    --popover: var(--workbench-surface);
+    --popover-foreground: var(--workbench-text);
+    --primary: var(--workbench-blue);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--workbench-surface-light);
+    --secondary-foreground: var(--workbench-text);
+    --muted: var(--workbench-surface);
+    --muted-foreground: var(--workbench-text-muted);
+    --accent: var(--workbench-selected);
+    --accent-foreground: var(--workbench-text);
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
+    --border: var(--workbench-border);
+    --input: var(--workbench-surface-light);
+    --ring: var(--workbench-blue);
+    --radius: 2px;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: var(--workbench-surface);
+    --sidebar-foreground: var(--workbench-text);
+    --sidebar-primary: var(--workbench-blue);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--workbench-hover);
+    --sidebar-accent-foreground: var(--workbench-text);
+    --sidebar-border: var(--workbench-border);
+    --sidebar-ring: var(--workbench-blue);
   }
 
   .dark {

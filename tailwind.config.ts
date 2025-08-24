@@ -61,6 +61,26 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				workbench: {
+					bg: 'hsl(var(--workbench-bg))',
+					surface: 'hsl(var(--workbench-surface))',
+					'surface-light': 'hsl(var(--workbench-surface-light))',
+					border: 'hsl(var(--workbench-border))',
+					text: 'hsl(var(--workbench-text))',
+					'text-muted': 'hsl(var(--workbench-text-muted))',
+					blue: 'hsl(var(--workbench-blue))',
+					'blue-light': 'hsl(var(--workbench-blue-light))',
+					selected: 'hsl(var(--workbench-selected))',
+					hover: 'hsl(var(--workbench-hover))',
+					'menu-bg': 'hsl(var(--workbench-menu-bg))',
+					'toolbar-bg': 'hsl(var(--workbench-toolbar-bg))',
+					'editor-bg': 'hsl(var(--workbench-editor-bg))',
+					'editor-text': 'hsl(var(--workbench-editor-text))',
+					'grid-bg': 'hsl(var(--workbench-grid-bg))',
+					'grid-border': 'hsl(var(--workbench-grid-border))',
+					'grid-header': 'hsl(var(--workbench-grid-header))',
+					'grid-selected': 'hsl(var(--workbench-grid-selected))'
 				}
 			},
 			borderRadius: {
