@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronRight, Database, Table, Eye, Settings } from "lucide-react";
+import { ChevronDown, ChevronRight, Folder, FolderOpen, File, FileText, Plus, FolderPlus } from "lucide-react";
 import { useState } from "react";
 
 const ObjectBrowser = () => {
-  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(["dvd_collection", "tables"]));
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set(["datasets", "csv-files"]));
 
   const toggleExpand = (item: string) => {
     const newExpanded = new Set(expandedItems);
@@ -50,49 +50,67 @@ const ObjectBrowser = () => {
 
   return (
     <div className="bg-workbench-surface border-r border-workbench-border w-52 flex flex-col">
-      <div className="bg-workbench-surface-light border-b border-workbench-border px-2 py-1">
-        <h3 className="text-xs font-medium text-workbench-text">Object Browser</h3>
-      </div>
-      
-      <div className="p-2">
-        <select className="w-full bg-workbench-surface-light text-workbench-text text-xs border border-workbench-border rounded px-2 py-1">
-          <option>Default:</option>
-        </select>
+      <div className="bg-workbench-surface-light border-b border-workbench-border px-2 py-1 flex items-center justify-between">
+        <h3 className="text-xs font-medium text-workbench-text">File Explorer</h3>
+        <div className="flex gap-1">
+          <button className="text-workbench-text hover:bg-workbench-hover p-1 rounded">
+            <Plus className="w-3 h-3" />
+          </button>
+          <button className="text-workbench-text hover:bg-workbench-hover p-1 rounded">
+            <FolderPlus className="w-3 h-3" />
+          </button>
+        </div>
       </div>
 
       <div className="flex-1 overflow-auto">
         <TreeItem 
-          label="dvd_collection" 
-          icon={<Database className="w-3 h-3" />}
+          label="datasets" 
+          icon={expandedItems.has("datasets") ? <FolderOpen className="w-3 h-3" /> : <Folder className="w-3 h-3" />}
           expandable 
-          expanded={expandedItems.has("dvd_collection")}
-          onClick={() => toggleExpand("dvd_collection")}
+          expanded={expandedItems.has("datasets")}
+          onClick={() => toggleExpand("datasets")}
         />
         
-        {expandedItems.has("dvd_collection") && (
+        {expandedItems.has("datasets") && (
           <>
             <TreeItem 
-              label="Tables" 
-              icon={<Table className="w-3 h-3" />}
+              label="csv-files" 
+              icon={expandedItems.has("csv-files") ? <FolderOpen className="w-3 h-3" /> : <Folder className="w-3 h-3" />}
               level={1}
               expandable 
-              expanded={expandedItems.has("tables")}
-              onClick={() => toggleExpand("tables")}
+              expanded={expandedItems.has("csv-files")}
+              onClick={() => toggleExpand("csv-files")}
             />
             
-            {expandedItems.has("tables") && (
-              <TreeItem label="movies" level={2} />
+            {expandedItems.has("csv-files") && (
+              <>
+                <TreeItem 
+                  label="movies.csv" 
+                  icon={<FileText className="w-3 h-3" />}
+                  level={2} 
+                />
+                <TreeItem 
+                  label="customers.csv" 
+                  icon={<FileText className="w-3 h-3" />}
+                  level={2} 
+                />
+                <TreeItem 
+                  label="sales.csv" 
+                  icon={<FileText className="w-3 h-3" />}
+                  level={2} 
+                />
+              </>
             )}
             
             <TreeItem 
-              label="Views" 
-              icon={<Eye className="w-3 h-3" />}
+              label="reports" 
+              icon={<Folder className="w-3 h-3" />}
               level={1}
               expandable 
             />
             <TreeItem 
-              label="Routines" 
-              icon={<Settings className="w-3 h-3" />}
+              label="backups" 
+              icon={<Folder className="w-3 h-3" />}
               level={1}
               expandable 
             />
@@ -100,13 +118,13 @@ const ObjectBrowser = () => {
         )}
 
         <TreeItem 
-          label="mydb" 
-          icon={<Database className="w-3 h-3" />}
+          label="projects" 
+          icon={<Folder className="w-3 h-3" />}
           expandable 
         />
         <TreeItem 
-          label="world" 
-          icon={<Database className="w-3 h-3" />}
+          label="templates" 
+          icon={<Folder className="w-3 h-3" />}
           expandable 
         />
       </div>
